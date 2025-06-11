@@ -1,6 +1,9 @@
 export default function CareersSection() {
   return (
-    <div className="relative h-[500px] w-full overflow-hidden">
+    <div
+      className="relative h-[500px] w-full overflow-hidden"
+      style={{ scrollMarginTop: "80px" }}
+    >
       {/* Background Image */}
       <div
         className="absolute inset-0 bg-cover bg-center"

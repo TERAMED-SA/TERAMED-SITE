@@ -44,7 +44,7 @@ export default function SectorSection() {
   const currentContent = sectorContent[selectedSector];
 
   return (
-    <div className="bg-gray-50 py-16 px-6 md:px-12 lg:px-24">
+    <div className="bg-gray-50 px-6 md:px-12 lg:px-24 pt-16 pb-16">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           {/* Left Column - Sector Selection */}

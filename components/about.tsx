@@ -34,7 +34,7 @@ export default function AboutUs() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 p-6 md:p-12 lg:p-24 mt-28">
+    <div className="min-h-screen bg-gray-50 p-6 md:p-12">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Left Column */}
