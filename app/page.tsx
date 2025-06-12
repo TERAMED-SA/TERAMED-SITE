@@ -28,21 +28,44 @@ export default function Component() {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Header Bar */}
+      {/* Header Bar - Melhorado para responsividade */}
       <div className="bg-slate-800 text-white py-2 px-4">
-        <div className="max-w-7xl mx-auto flex justify-between items-center text-sm">
-          <div className="flex items-center gap-2">
-            <MapPin className="w-4 h-4" />
-            <span>Via Luanda Sul, Luanda</span>
-          </div>
-          <div className="flex items-center gap-6">
+        <div className="max-w-7xl mx-auto">
+          {/* Desktop Layout */}
+          <div className="hidden md:flex justify-between items-center text-sm">
             <div className="flex items-center gap-2">
-              <Mail className="w-4 h-4" />
-              <span>info@teramed.ao</span>
+              <MapPin className="w-4 h-4 flex-shrink-0" />
+              <span className="truncate">Edifício Prometeus, Talatona, Luanda</span>
             </div>
-            <div className="flex items-center gap-2">
-              <Phone className="w-4 h-4" />
-              <span>+244 934 888 675</span>
+            <div className="flex items-center gap-6">
+              <div className="flex items-center gap-2">
+                <Mail className="w-4 h-4 flex-shrink-0" />
+                <span>info@teramed.ao</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Phone className="w-4 h-4 flex-shrink-0" />
+                <span>+244 934 886 675</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Mobile Layout */}
+          <div className="md:hidden">
+            <div className="flex flex-col space-y-2 text-xs">
+              <div className="flex items-center justify-center gap-2">
+                <MapPin className="w-3 h-3 flex-shrink-0" />
+                <span className="text-center">Edifício Prometeus, Talatona, Luanda</span>
+              </div>
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-1">
+                  <Mail className="w-3 h-3 flex-shrink-0" />
+                  <span className="text-xs">info@teramed.ao</span>
+                </div>
+                <div className="flex items-center gap-1">
+                  <Phone className="w-3 h-3 flex-shrink-0" />
+                  <span className="text-xs">+244 934 886 675</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -57,7 +80,7 @@ export default function Component() {
               alt="TERÁMED Logo"
               width={120}
               height={40}
-              className="h-10 w-auto cursor-pointer"
+              className="h-8 md:h-10 w-auto cursor-pointer"
               onClick={() => scrollToSection("inicio")}
             />
           </div>
@@ -221,7 +244,7 @@ export default function Component() {
                     <div className="flex items-center gap-2">
                       <Phone className="w-4 h-4 text-[#255459]" />
                       <a href="tel:+244934888675" className="text-gray-600">
-                        +244 934 888 675
+                        +244 934 886 675
                       </a>
                     </div>
                     <div className="flex items-center gap-2">
@@ -236,7 +259,7 @@ export default function Component() {
                     <div className="flex items-center gap-2">
                       <MapPin className="w-4 h-4 text-[#255459]" />
                       <span className="text-gray-600">
-                        Via Luanda Sul, Luanda
+                       Edifício Prometeus, Talatona, Luanda
                       </span>
                     </div>
                   </div>
@@ -260,48 +283,57 @@ export default function Component() {
         )}
       </nav>
 
-      {/* Hero Section */}
+      {/* Hero Section - Melhorado para responsividade */}
       <section
         id="inicio"
-        className="relative bg-[#255459] text-white h-[800px]"
+        className="relative bg-[#255459] text-white min-h-[600px] sm:min-h-[700px] md:min-h-[800px] flex items-center"
       >
-        <div className="max-w-7xl mx-auto px-4 py-16 lg:py-24">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="mb-20 lg:mb-40 space-y-6">
-              <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight">
+        <div className="max-w-7xl mx-auto px-4 py-8 sm:py-12 md:py-16 lg:py-24 w-full">
+          <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
+            {/* Conteúdo de texto */}
+            <div className="space-y-4 sm:space-y-6 order-2 lg:order-1">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight">
                 O futuro da saúde ao seu alcance, com soluções inteligente
               </h1>
-              <p className="text-lg lg:text-xl text-teal-100 leading-relaxed">
+              <p className="text-sm sm:text-base md:text-lg lg:text-xl text-teal-100 leading-relaxed">
                 Desenvolvemos soluções tecnológicas inovadoras para o sector da
                 saúde, conectando pacientes e profissionais por meio de
                 ferramentas eficientes, acessíveis e de alto padrão.
               </p>
-              <Button
-                className="bg-white text-[#255459] hover:bg-gray-100 px-8 py-3 text-lg font-medium rounded-full"
-                onClick={() =>
-                  (window.location.href = "mailto:info@teramed.ao")
-                }
-              >
-                Contacte-nos
-              </Button>
+              <div className="pt-2 sm:pt-4">
+                <Button
+                  className="bg-white text-[#255459] hover:bg-gray-100 px-6 sm:px-8 py-2 sm:py-3 text-base sm:text-lg font-medium rounded-full w-full sm:w-auto"
+                  onClick={() =>
+                    (window.location.href = "mailto:info@teramed.ao")
+                  }
+                >
+                  Contacte-nos
+                </Button>
+              </div>
             </div>
-            <div className="relative hidden lg:block">
-              <Image
-                src="/Imagens/banner.png"
-                alt="Three professional doctors in white coats"
-                width={600}
-                height={400}
-                className="w-full h-auto"
-              />
+
+            {/* Imagem */}
+            <div className="relative order-1 lg:order-2">
+              {/* Imagem visível em mobile também, mas menor */}
+              <div className="block">
+                <Image
+                  src="/Imagens/banner.png"
+                  alt="Three professional doctors in white coats"
+                  width={600}
+                  height={400}
+                  className="w-full h-auto max-w-sm sm:max-w-md md:max-w-lg lg:max-w-full mx-auto"
+                  priority
+                />
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="sobre" className="bg-white mt-36 px-6 md:px-12 lg:px-24">
+      <section id="sobre" className="bg-white mt-16 sm:mt-24 md:mt-36 px-6 md:px-12 lg:px-24">
         <AboutUs />
       </section>
-      <section id="sector" className="-mt-20">
+      <section id="sector" className="-mt-10 sm:-mt-16 md:-mt-20">
         <SectorSection />
       </section>
       <FidelitySection />

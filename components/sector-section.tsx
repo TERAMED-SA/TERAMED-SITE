@@ -5,7 +5,7 @@ import { useState } from "react";
 
 export default function SectorSection() {
   const [selectedSector, setSelectedSector] = useState<"saude" | "tecnologia">(
-    "saude"
+    "tecnologia"
   );
 
   const sectorContent = {
@@ -23,6 +23,12 @@ export default function SectorSection() {
       ],
       tipText:
         "Ampla encomenda pronta. O tempo cego tinha agora aqueles que deviam ser definidos com frequência. Ou confortável, sem graça, ele mostra um desejo mais verdadeiro. Não, em muitos nega-se a falta do mal. Em tal espírito uma mãe. Montou velho estritamente mas marianne admitiu. As pessoas antigas são removidas, permanecemos louvamos.",
+      specialist: {
+        image: "/Imagens/specialist.jpeg",
+        name: "Dra. Josiane Alves",
+        role: "Clínica Geral",
+        quote: "É mais fácil cuidar da saúde todos os dias Com a ajuda da tecnologia, Prevenir é o primeiro passo para viver melhor."
+      }
     },
     tecnologia: {
       title: "Tecnologia",
@@ -38,6 +44,12 @@ export default function SectorSection() {
       ],
       tipText:
         "Ampla encomenda pronta. O tempo cego tinha agora aqueles que deviam ser definidos com frequência. Ou confortável, sem graça, ele mostra um desejo mais verdadeiro. Não, em muitos nega-se a falta do mal. Em tal espírito uma mãe. Montou velho estritamente mas marianne admitiu. As pessoas antigas são removidas, permanecemos louvamos.",
+      specialist: {
+        image: "/Imagens/carlosmarques.png",
+        name: "Carlos Marques",
+        role: "CTO",
+        quote: "Quando aliamos a saúde às novas tecnologias, não só otimizamos diagnósticos e tratamentos, como também aproximamos o cuidado médico das pessoas — é o futuro a serviço da vida."
+      }
     },
   };
 
@@ -63,7 +75,21 @@ export default function SectorSection() {
                 ></div>
               </div>
 
-              <div className="space-y-4">
+              <div className="space-y-4"> 
+                <button
+                  onClick={() => setSelectedSector("tecnologia")}
+                  className={`w-full p-6 rounded-lg text-xl font-semibold transition-all duration-200 ${
+                    selectedSector === "tecnologia"
+                      ? "text-white"
+                      : "bg-white text-gray-700 border border-gray-200 hover:shadow-md"
+                  }`}
+                  style={{
+                    backgroundColor:
+                      selectedSector === "tecnologia" ? "#255459" : undefined,
+                  }}
+                >
+                  Tecnologia
+                </button>
                 <button
                   onClick={() => setSelectedSector("saude")}
                   className={`w-full p-6 rounded-lg text-xl font-semibold transition-all duration-200 ${
@@ -79,20 +105,7 @@ export default function SectorSection() {
                   Saúde
                 </button>
 
-                <button
-                  onClick={() => setSelectedSector("tecnologia")}
-                  className={`w-full p-6 rounded-lg text-xl font-semibold transition-all duration-200 ${
-                    selectedSector === "tecnologia"
-                      ? "text-white"
-                      : "bg-white text-gray-700 border border-gray-200 hover:shadow-md"
-                  }`}
-                  style={{
-                    backgroundColor:
-                      selectedSector === "tecnologia" ? "#255459" : undefined,
-                  }}
-                >
-                  Tecnologia
-                </button>
+               
               </div>
             </div>
           </div>
@@ -121,36 +134,34 @@ export default function SectorSection() {
             </div>
           </div>
 
-          {/* Right Column - Tips */}
+         
           <div className="lg:col-span-3">
             <div
               className="rounded-lg p-6 text-white"
               style={{ backgroundColor: "#255459" }}
             >
-              <h4 className="text-xl font-semibold mb-6">
-                {currentContent.tipsTitle}
-              </h4>
 
-              <div className="space-y-4 mb-6">
+               <div className="space-y-4 mb-6">
                 <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">
+                  <div className="w-16 h-16 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">
                     <Image
-                      src="/Imagens/specialist.jpeg"
-                      alt="Dra. Josiane Alves"
-                      width={32}
-                      height={32}
+                      src={currentContent.specialist.image}
+                      alt={currentContent.specialist.name}
+                      width={58}
+                      height={58}
                       className="rounded-full"
                     />
                   </div>
                   <div>
-                    <p className="font-medium">Dra. Josiane Alves</p>
-                    <p className="text-sm text-white/80">Clínica Geral</p>
+                    <p className="font-medium">{currentContent.specialist.name}</p>
+                    <p className="text-sm text-white/80">{currentContent.specialist.role}</p>
                   </div>
                 </div>
               </div>
 
+
               <p className="text-sm text-white/90 mb-6 leading-relaxed">
-                {currentContent.tipText}
+               {currentContent.specialist.quote}
               </p>
 
               {/* <div className="space-y-3">

@@ -126,12 +126,12 @@ export default function Footer() {
                     href="tel:+244934888675"
                     className="text-[#255459] font-semibold"
                   >
-                    +244 934 888 675
+                    +244 934 886 675
                   </a>
                 </div>
                 <div className="mt-2">
                   <a
-                    href="https://wa.me/244934888675"
+                    href="https://wa.me/244934886675"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-block bg-[#255459] text-white px-4 py-2 rounded-md hover:bg-[#1f4248] transition-colors duration-200"
