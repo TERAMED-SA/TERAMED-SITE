@@ -176,7 +176,7 @@ export default function Footer() {
               Contacto
             </a>
             <a
-              href="https://wa.me/244934888675"
+              href="https://wa.me/244934886675"
               target="_blank"
               rel="noopener noreferrer"
               className="text-white text-sm hover:text-green-300 transition-colors duration-200"

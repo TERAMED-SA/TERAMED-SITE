@@ -27,7 +27,7 @@ export default function FAQSection() {
       question:
         "Como posso implementar os sistemas da TERAMED na minha instituição?",
       answer:
-        "Entre em contacto connosco através do info@teramed.ao ou +244 934 888 675. Nossa equipa técnica fará uma avaliação das suas necessidades e criará uma solução personalizada.",
+        "Entre em contacto connosco através do info@teramed.ao ou +244 934 886 675 . Nossa equipa técnica fará uma avaliação das suas necessidades e criará uma solução personalizada.",
     },
     {
       question:
